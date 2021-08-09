@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> TRINITY:88 </title>
+
+        <style>
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button 
+            { 
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+
+            body
+            {
+                border: 2px solid white;
+                background-color: black;
+            }
+
+            #trinity
+            {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10vh;
+                height: 12vw;
+            }
+
+            #keyHide
+            {
+                color: white;
+                text-align: center;
+                display: none;
+                overflow: hidden; 
+                white-space: nowrap; 
+                margin: 0 auto;
+                margin-bottom: 20.4vh;
+                letter-spacing: .15vw;
+                animation: 
+                    typing 5s steps(100, end),
+                    blink-caret .5s step-end infinite;
+            }
+
+            #code
+            {
+                margin-top: 10vh;
+                display: flex;
+                color: white;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 44.5vh;
+            }
+
+            #C1, #C2, #C3, #C4, #C5, #C6
+            {
+                border: 1px solid white;
+                padding: 30px;
+                text-align: center;
+                background-color: black;
+                height: 1vw;
+                width: 1vw;
+                color: white;
+                font-size: 1.5vw;
+            }
+
+            @keyframes typing 
+            {
+                from { width: 0 }
+                to { width: 100% }
+            }
+
+            @keyframes blink-caret 
+            {
+                from, to { border-color: transparent }
+                50% { border-color: white; }
+            }
+        </style>
+
+        <script>
+            function imageClick()
+            {
+                var WRONG = "People always look for the size, not the quality." + "<br>" + "77 97 115 97 99 99 105 111";
+                var GOOD = "\"they caN conquer who believe they cAn.\"" + "<br>" + "find a nuMber thEn add \".com\". good luck!";
+                var realValue = true;
+                const arr = ["2", "1", "1", "4", "3", "9"];
+
+                for (var i = 0; i < 6; i++)
+                    if (document.getElementById("C" + (i + 1)).value != arr[i]) realValue = false;
+
+                if (realValue == true) 
+                {
+                    document.getElementById("keyHide").innerHTML = GOOD;
+
+                    var el = document.getElementById("keyHide");
+                    el.style.animation = 'none';
+                    el.offsetHeight; 
+                    el.style.animation = null; 
+                }
+                else document.getElementById("keyHide").innerHTML = WRONG;
+
+                document.getElementById("keyHide").style.display = "block";
+                document.getElementById("code").style.marginBottom = "20.25vh";
+            }
+        </script>
+    </head>
+
+    <body>
+        <img src="../TRINITY/trinity.png" id="trinity" onclick="imageClick()">
+        <div id="code">
+            <input type="number" id="C1" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;">
+            <input type="number" id="C2" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;"> 
+            <input type="number" id="C3" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;"> 
+            <input type="number" id="C4" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;"> 
+            <input type="number" id="C5" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;"> 
+            <input type="number" id="C6" onKeyDown="if(this.value.length == 1 && event.keyCode!=8) return false;"> 
+        </div>
+        <div id="keyHide"> </div>
+    </body>
+</html>
